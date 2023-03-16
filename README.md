@@ -10,7 +10,7 @@ It does the following in addition:
 
 ### Locally
 
-Sagctl has to be installed: https://samhammer.atlassian.net/wiki/spaces/K8S/pages/158793743/How+to+use+sagctl 
+Sagctl has to be installed: https://samhammer.atlassian.net/wiki/spaces/K8S/pages/158793743/How+to+use+sagctl
 
 ### In the cluster
 
