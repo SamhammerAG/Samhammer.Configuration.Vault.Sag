@@ -8,10 +8,9 @@ namespace Samhammer.Configuration.Vault.Sag
     {
         public static IConfigurationBuilder AddAuthenticatedVault(this IConfigurationBuilder configurationBuilder, VaultOptions options)
         {
-            //var vaultUrl = VaultAuthService.GetVaultUrl();
+            var vaultUrl = VaultAuthService.GetVaultUrl();
             var authMethodInfo = VaultAuthService.GetAuthMethodInfo();
 
-            var vaultUrl = "https://*:vault.cloud.samhammer.de";
             return configurationBuilder.AddVault(new Uri(vaultUrl), authMethodInfo, options);
         }
     }
