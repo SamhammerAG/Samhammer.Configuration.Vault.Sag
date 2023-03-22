@@ -16,6 +16,11 @@ namespace Samhammer.Configuration.Vault.Sag
             IEnumerable<string> tags = null,
             TimeSpan? timeout = null)
         {
+            if (!VaultAuthService.IsVaultEnabled())
+            {
+                return builder;
+            }
+
             var vaultUrl = VaultAuthService.GetVaultUrl();
             var authMethodInfo = VaultAuthService.GetAuthMethodInfo();
 

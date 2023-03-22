@@ -9,10 +9,11 @@ namespace Samhammer.Configuration.Vault.Sag.Services
     public static class VaultAuthService
     {
         private const string KubernetesServiceAccountJwtFile = "/var/run/secrets/kubernetes.io/serviceaccount/token";
-
+        
+        private const string EnvironmentVariableNameVaultEnabled = "VaultEnabled";
         private const string EnvironmentVariableNameVaultUrl = "VaultUrl";
         private const string EnvironmentVariableNameKubernetesRole = "VaultKubernetesRole";
-
+        
         public static string GetVaultUrl()
         {
             var vaultUrl = IsRunningInKubernetesCluster()
@@ -35,6 +36,12 @@ namespace Samhammer.Configuration.Vault.Sag.Services
             }
 
             return GetLocalAuthMethodInfo();
+        }
+
+        public static bool IsVaultEnabled()
+        {
+            bool.TryParse(Environment.GetEnvironmentVariable(EnvironmentVariableNameVaultEnabled), out var isVaultEnabled);
+            return isVaultEnabled;
         }
 
         private static IAuthMethodInfo GetKubernetesAuthMethodInfo()
