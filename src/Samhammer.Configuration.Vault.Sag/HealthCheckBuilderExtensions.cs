@@ -16,7 +16,7 @@ namespace Samhammer.Configuration.Vault.Sag
             IEnumerable<string> tags = null,
             TimeSpan? timeout = null)
         {
-            if (!VaultAuthService.IsVaultEnabled())
+            if (VaultAuthService.IsVaultDisabled())
             {
                 return builder;
             }

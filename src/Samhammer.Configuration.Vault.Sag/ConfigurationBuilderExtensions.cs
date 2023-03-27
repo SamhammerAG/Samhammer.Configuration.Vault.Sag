@@ -8,7 +8,7 @@ namespace Samhammer.Configuration.Vault.Sag
     {
         public static IConfigurationBuilder AddAuthenticatedVault(this IConfigurationBuilder configurationBuilder, VaultOptions options)
         {
-            if (!VaultAuthService.IsVaultEnabled())
+            if (VaultAuthService.IsVaultDisabled())
             {
                 return configurationBuilder;
             }
