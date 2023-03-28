@@ -14,9 +14,10 @@ Sagctl has to be installed: https://samhammer.atlassian.net/wiki/spaces/K8S/page
 
 ### In the cluster
 
-You need to set the following two environment variables:
-* VaultUrl: With the url to vault
-* VaultKubernetesRole: The vault role of the application
+Use following environment variables for configuration:
+* VaultUrl: With the url to vault (required)
+* VaultKubernetesRole: The vault role of the application (required)
+* VaultDisabled: When true skips adding vault and healthchecks. (optional)
 
 ## How to use in Program.cs
 
