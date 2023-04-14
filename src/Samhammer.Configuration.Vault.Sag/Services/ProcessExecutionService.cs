@@ -40,7 +40,7 @@ namespace Samhammer.Configuration.Vault.Sag.Services
                 return outputBuilder.ToString();
             }
 
-            throw new Exception($"'{process.StartInfo.FileName}' with args '{process.StartInfo.Arguments}' failed with error '{errorBuilder}'");
+            throw new Exception($"'{process.StartInfo.FileName}' with args '{process.StartInfo.Arguments}' failed with error '{outputBuilder}{errorBuilder}'");
         }
     }
 }
