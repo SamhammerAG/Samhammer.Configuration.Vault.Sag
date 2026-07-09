@@ -1,3 +1,6 @@
+> [!NOTE]
+> This repo was moved into: https://github.com/SamhammerAG/Samhammer.Configuration.Vault
+
 # Samhammer.Configuration.Vault.Sag
 
 This is an internally used convenience library to add Samhammer.ConfigurationVault.
